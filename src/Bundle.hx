@@ -85,7 +85,7 @@ class Bundle
 				return macro {
 					@:keep Require.module($v{libName})
 						.then(function(id:String) {
-							untyped __js__($v{bridge});
+							untyped js.Syntax.code($v{bridge});
 							return id;
 						});
 				}
