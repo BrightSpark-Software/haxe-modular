@@ -41,7 +41,7 @@ class Parser
 		final program = ast.Cherow.parse(src, { ranges: true, raw: true, loc: withLocation });
 		final engine = "Cherow";
 		#else
-		final program = ast.Acorn.parse(src, { allowReserved: true, locations: withLocation });
+		final program = ast.Acorn.parse(src, { allowReserved: true, locations: withLocation, ecmaVersion:11 });
 		final engine = "Acorn.js";
 		#end
 		walkProgram(program);

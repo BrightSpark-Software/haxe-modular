@@ -1250,7 +1250,7 @@ class Parser {
 		haxe_Log.trace("AST processed in: " + (t2 - t1) + "ms",{ fileName : "tool/src/Parser.hx", lineNumber : 35, className : "Parser", methodName : "new"});
 	}
 	processInput(src,withLocation) {
-		let program = ast_Acorn.parse(src,{ allowReserved : true, locations : withLocation});
+		let program = ast_Acorn.parse(src,{ allowReserved : true, locations : withLocation, ecmaVersion : 11});
 		let engine = "Acorn.js";
 		this.walkProgram(program);
 		return engine;
